@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .drawerIcons {
+    @apply h-px bg-white;
+  }
+
+  .active {
+    @apply relative text-cyan-500 font-bold before:absolute before:left-[-5px] before:bottom-[-12px] before:w-[135%] before:h-[2px] before:rounded-md before:bg-gradient-to-r before:from-indigo-500 before:from-10% before:via-sky-500 before:via-30% before:to-emerald-500 before:to-90%;
+  }
+
+  .hoverElement {
+    @apply relative font-semibold text-cyan-500 before:opacity-35 before:absolute before:left-[-5px] before:bottom-[-12px] before:w-[135%] before:h-[2px] before:rounded-md before:bg-gradient-to-r before:from-indigo-500 before:from-10% before:via-sky-500 before:via-30% before:to-emerald-500 before:to-90%;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  /* For WebKit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 4px; /* Set the width of the scrollbar */
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #333; /* Set the color of the thumb */
+    border-radius: 6px; /* Set the border-radius of the thumb */
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Set the color of the track */
+  }
+
+  /* For Firefox */
+  /* Set the width and color of the scrollbar using scrollbar-width and scrollbar-color */
+  /* Note: This works only in Firefox */
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: #f1f1f1;
+  }
+
+  .glassBg {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    border-radius: 10px;
+    border: 1px solid #59595942;
+  }
+
+  .glassBgAuth {
+    background: linear-gradient(
+      135deg,
+      rgb(255 255 255 / 10%),
+      rgb(255 255 255 / 49%)
+    );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
 }
